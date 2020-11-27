@@ -9,7 +9,11 @@
         android:roundIcon="@drawable/output"
         android:supportsRtl="true"
         android:theme="@style/Theme.ForActivities">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".ScriptActivity" />
+        <activity android:name=".BookActivity" />
+        <activity android:name=".DiaryActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>

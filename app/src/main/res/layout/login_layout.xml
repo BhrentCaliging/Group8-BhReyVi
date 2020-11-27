@@ -31,7 +31,7 @@
         android:layout_width="250dp"
         android:layout_height="36dp"
         android:background="@color/white"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:layout_below="@+id/et_username"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
@@ -68,5 +68,17 @@
         android:layout_below="@+id/btn_confirm_login"
         android:text="Sign up"
         android:textColor="#45c0ed" />
+
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="77dp"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_alignStart="@+id/btn_confirm_login"
+        android:layout_alignEnd="@+id/btn_confirm_login"
+        android:layout_alignBottom="@+id/btn_confirm_login"
+        android:layout_marginStart="54dp"
+        android:layout_marginEnd="57dp" />
 
 </RelativeLayout>

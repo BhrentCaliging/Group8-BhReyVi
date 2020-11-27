@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,5 +7,82 @@
     tools:context=".MainActivity">
 
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="186dp"
+        android:layout_height="140dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="300dp"
+        android:layout_marginBottom="50dp"
+        android:clickable="true"
+        app:srcCompat="@android:drawable/ic_input_add" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/btn_recents"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="100dp"
+        android:text="Recents"
+        android:textColor="@color/black"
+        android:backgroundTint="#3bedac"/>
+
+    <Button
+        android:id="@+id/btn_diary"
+        android:layout_width="95dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="105dp"
+        android:text="Diary"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"/>
+
+    <Button
+        android:id="@+id/btn_books"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="205dp"
+        android:text="Books"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"/>
+
+    <Button
+        android:id="@+id/btn_scripts"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="300dp"
+        android:text="Scripts"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"/>
+
+    <TextView
+        android:id="@+id/tv_diary"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:textSize="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btn_recents"
+        android:text="Diary" />
+
+    <TextView
+        android:id="@+id/tv_book"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:textSize="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_diary"
+        android:text="Book" />
+
+    <TextView
+        android:id="@+id/tv_Script"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:textSize="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_book"
+        android:text="Script" />
+</RelativeLayout>

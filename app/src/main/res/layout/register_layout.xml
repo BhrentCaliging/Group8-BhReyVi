@@ -70,4 +70,17 @@
         android:text="Login"
         android:textColor="#45c0ed" />
 
+    <ProgressBar
+        android:id="@+id/signup_progress"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="77dp"
+        android:visibility="invisible"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btn_confirm_signup"
+        android:layout_alignEnd="@+id/btn_confirm_signup"
+        android:layout_alignBottom="@+id/btn_confirm_signup"
+        android:layout_marginStart="67dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="-1dp" />
+
 </RelativeLayout>

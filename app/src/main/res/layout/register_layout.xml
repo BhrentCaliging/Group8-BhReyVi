@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Sign Up"
+        android:layout_alignParentTop="true"
+        android:textSize="60dp"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-black" />
+
+    <EditText
+        android:id="@+id/et_username_signup"
+        android:layout_width="250dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="84dp"
+        android:ems="10"
+        android:hint="Username"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/et_password_signup"
+        android:layout_width="250dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:layout_below="@+id/et_username_signup"
+        android:layout_centerHorizontal="true"
+        android:inputType="textPassword"
+        android:hint="Password" />
+
+    <Button
+        android:id="@+id/btn_confirm_signup"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="76dp"
+        android:layout_below="@+id/et_password_signup"
+        android:layout_centerHorizontal="true"
+        android:text="Confirm"
+        android:backgroundTint="#45c0ed" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="64dp"
+        android:text="Already have an account? "
+        android:layout_below="@+id/btn_confirm_signup"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/tv_go_to_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="190dp"
+        android:layout_below="@+id/btn_confirm_signup"
+        android:layout_marginTop="64dp"
+        android:text="Login"
+        android:textColor="#45c0ed" />
+
+</RelativeLayout>

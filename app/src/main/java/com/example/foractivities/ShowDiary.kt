@@ -1,22 +1,33 @@
 package com.example.foractivities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
 import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
 
-class DiaryActivity : AppCompatActivity() {
+class ShowDiary: AppCompatActivity() {
 
+    lateinit var date: EditText
+    lateinit var intro: EditText
+    lateinit var body: EditText
+    lateinit var outro: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_diary)
-
+        setContentView(R.layout.activity_show_diary)
         val handler = DiaryHelper(this)
         val entryList = handler.readDiaryEntry()
+
+        date = findViewById(R.id.editDate)
+        //date.setOnTouchListener() {}
+
+        intro = findViewById(R.id.editIntro)
+
+        body = findViewById(R.id.editBody)
+
+        outro = findViewById(R.id.editOutro)
 
     }
 
@@ -38,5 +49,6 @@ class DiaryActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+
     }
 }

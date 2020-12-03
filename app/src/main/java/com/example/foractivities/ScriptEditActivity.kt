@@ -1,7 +1,10 @@
 package com.example.foractivities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -63,5 +66,25 @@ class ScriptEditActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Please enter the credentials", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.main_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.profile ->{
+                startActivity(Intent(this, ProfileActivity::class.java))
+                true
+            }
+            R.id.recents ->{
+                startActivity(Intent(this, MainActivity::class.java))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+
     }
 }

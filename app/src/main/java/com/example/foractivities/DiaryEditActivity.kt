@@ -8,28 +8,37 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.foractivities.handlers.DiaryHandler
+import com.example.foractivities.models.Diary
 
-class ShowDiary: AppCompatActivity() {
+class DiaryEditActivity: AppCompatActivity() {
 
     lateinit var date: EditText
     lateinit var intro: EditText
     lateinit var body: EditText
     lateinit var outro: EditText
     lateinit var save: TextView
+    lateinit var  diaryHandler: DiaryHandler
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_diary)
-        val handler = DiaryHelper(this)
+
+        diaryHandler = DiaryHandler()
+        var diaryItems: Diary = intent.getSerializableExtra("data") as Diary
 
         date = findViewById(R.id.editDate)
         intro = findViewById(R.id.editIntro)
         body = findViewById(R.id.editBody)
         outro = findViewById(R.id.editOutro)
 
+        date.setText(diaryItems.date)
+        intro.setText(diaryItems.intro)
+        body.setText(diaryItems.body)
+        outro.setText(diaryItems.outro)
+
         save = findViewById(R.id.save)
-
-
         save.setOnClickListener{
 
             val date = date.text.toString()
@@ -37,22 +46,22 @@ class ShowDiary: AppCompatActivity() {
             val body = body.text.toString()
             val outro = outro.text.toString()
 
+            val diary = Diary(id = diaryItems.id, date = date, intro = intro, body = body, outro = outro)
+
             if(date.isNotEmpty() && intro.isNotEmpty() && body.isNotEmpty() && outro.isNotEmpty()) {
-                handler.insertDiaryEntry(date, intro, body, outro)
+                diaryHandler.update(diary)
                 Toast.makeText(this, "Entry Added to Diary", Toast.LENGTH_SHORT).show()
             }
             else if(date.isEmpty() || intro.isEmpty() || body.isEmpty() || outro.isEmpty()){
                 Toast.makeText(this, "Fill Up All Fields", Toast.LENGTH_SHORT).show()
             }
         }
-
-
-
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater = menuInflater
-        inflater.inflate(R.menu.side_menu, menu)
+        inflater.inflate(R.menu.main_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -62,12 +71,14 @@ class ShowDiary: AppCompatActivity() {
                 startActivity(Intent(this, ProfileActivity::class.java))
                 true
             }
-            R.id.main ->{
+            R.id.recents ->{
                 startActivity(Intent(this, MainActivity::class.java))
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
+
+
 
     }
 }

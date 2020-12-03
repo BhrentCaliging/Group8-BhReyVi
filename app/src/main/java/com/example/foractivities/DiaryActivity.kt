@@ -3,54 +3,92 @@ package com.example.foractivities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.ContextMenu
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ListView
+import android.view.View
+import android.widget.*
+import com.example.foractivities.handlers.DiaryHandler
+import com.example.foractivities.handlers.ScriptHandler
+import com.example.foractivities.models.Diary
+import com.example.foractivities.models.Script
 
 class DiaryActivity : AppCompatActivity() {
 
+    lateinit var diaries: ArrayList<Diary>
     lateinit var list: ListView
-    lateinit var helper: DiaryHelper
-    lateinit var entryList: MutableList<Diary>
-    lateinit var adapter: ArrayAdapter<Diary>
+    lateinit var diaryHandler: DiaryHandler
+    lateinit var diary: Diary
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_diary)
 
-        helper = DiaryHelper(this)
-        entryList = helper.readDiaryEntry()
-        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, entryList)
-
-
         list = findViewById(R.id.listView)
-        list.adapter = adapter
+        diaries = ArrayList()
+        diaryHandler = DiaryHandler()
 
-        list.setOnClickListener {
-            //adapter.getItemId()
+        registerForContextMenu(list)
+    }
 
+    override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        val inflater = menuInflater
+        inflater.inflate(R.menu.diary_item_menu, menu)
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        val info = item.menuInfo as AdapterView.AdapterContextMenuInfo
+        return when(item.itemId) {
+            R.id.go_to_edit_script -> {
+                diary = diaries[info.position]
+                var intent = Intent(this,DiaryEditActivity::class.java)
+                intent.putExtra("data", diary)
+                startActivity(intent)
+                true
+            }
+            R.id.go_to_delete_script -> {
+                if(diaryHandler.delete(diaries[info.position])){
+                    Toast.makeText(applicationContext, "Diary entry deleted successfully", Toast.LENGTH_SHORT).show()
+                }
+                true
+            }
+            else -> super.onContextItemSelected(item)
         }
     }
 
+    override fun onStart() {
+        super.onStart()
 
+        diaryHandler.diaryRef.addValueEventListener(object:
+            ValueEventListener {
+            override fun onDataChange(p0: DataSnapshot) {
+                diaries.clear()
+                p0.children.forEach{
+                        it -> val channel = it.getValue(Script::class.java)
+                    diaries.add(channel!!)
+                }
+
+                val adapter = ArrayAdapter<Script>(applicationContext, android.R.layout.simple_list_item_1, diaries)
+                list.adapter = adapter
+            }
+            override fun onCancelled(p0: DatabaseError) {
+
+            }
+
+        })
+    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater = menuInflater
-        inflater.inflate(R.menu.side_menu, menu)
+        inflater.inflate(R.menu.diary_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.profile ->{
-                startActivity(Intent(this, ProfileActivity::class.java))
-                true
-            }
-            R.id.main ->{
-                startActivity(Intent(this, MainActivity::class.java))
+            R.id.addDiary -> {
+                startActivity(Intent(this, DiaryAddActivity::class.java))
                 true
             }
             else -> super.onOptionsItemSelected(item)

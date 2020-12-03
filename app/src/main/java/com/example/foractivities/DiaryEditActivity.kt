@@ -50,7 +50,7 @@ class DiaryEditActivity: AppCompatActivity() {
 
             if(date.isNotEmpty() && intro.isNotEmpty() && body.isNotEmpty() && outro.isNotEmpty()) {
                 diaryHandler.update(diary)
-                Toast.makeText(this, "Entry Added to Diary", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Diary entry edited successfully", Toast.LENGTH_SHORT).show()
             }
             else if(date.isEmpty() || intro.isEmpty() || body.isEmpty() || outro.isEmpty()){
                 Toast.makeText(this, "Fill Up All Fields", Toast.LENGTH_SHORT).show()

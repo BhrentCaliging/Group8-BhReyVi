@@ -9,7 +9,9 @@
         android:roundIcon="@drawable/output"
         android:supportsRtl="true"
         android:theme="@style/Theme.ForActivities">
-        <activity android:name=".DiaryEditActivity" ></activity>
+        <activity android:name=".BookEditActivity"></activity>
+        <activity android:name=".BookAddActivity" />
+        <activity android:name=".DiaryEditActivity" />
         <activity android:name=".DiaryAddActivity" />
         <activity android:name=".ScriptEditActivity" />
         <activity android:name=".ScriptAddActivity" />

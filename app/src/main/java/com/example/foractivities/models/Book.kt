@@ -4,10 +4,9 @@ import com.google.firebase.database.IgnoreExtraProperties
 import java.io.Serializable
 
 @IgnoreExtraProperties
-class Diary (var id: String? = "", var date: String? = "", var intro: String? = "", var body: String? = "", var outro: String? = ""):
-    Serializable {
+class Book(var id: String? = "", var title: String? = "", var chapter: String? = "", var synopsis: String? = ""):Serializable {
 
     override fun toString(): String {
-        return "Entry $date:   $intro"
+        return "Entry $title:   $chapter"
     }
 }

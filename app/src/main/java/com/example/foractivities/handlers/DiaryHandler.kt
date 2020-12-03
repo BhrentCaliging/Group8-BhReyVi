@@ -1,7 +1,8 @@
 package com.example.foractivities.handlers
 
 import com.example.foractivities.models.Diary
-import com.example.foractivities.models.Script
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class DiaryHandler {
     var database: FirebaseDatabase
@@ -9,7 +10,7 @@ class DiaryHandler {
 
     init {
         database = FirebaseDatabase.getInstance()
-        diaryRef = database.getReference("scripts")
+        diaryRef = database.getReference("diaries")
     }
 
     fun create(diary: Diary): Boolean{

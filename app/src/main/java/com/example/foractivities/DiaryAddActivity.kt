@@ -7,42 +7,44 @@ import android.view.MenuItem
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.foractivities.handlers.DiaryHandler
+import com.example.foractivities.handlers.ScriptHandler
 import com.example.foractivities.models.Diary
 
 class DiaryAddActivity : AppCompatActivity() {
 
-    lateinit var date: EditText
-    lateinit var intro: EditText
-    lateinit var body: EditText
-    lateinit var outro: EditText
+    lateinit var et_date: EditText
+    lateinit var et_intro: EditText
+    lateinit var et_body: EditText
+    lateinit var et_outro: EditText
     lateinit var save: TextView
-    lateinit var  diaryHandler: DiaryHandler
+    lateinit var diaryHandler: DiaryHandler
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_show_diary)
+        setContentView(R.layout.activity_diary_add)
 
-        date = findViewById(R.id.editDate)
-        intro = findViewById(R.id.editIntro)
-        body = findViewById(R.id.editBody)
-        outro = findViewById(R.id.editOutro)
+        et_date = findViewById(R.id.addDate)
+        et_intro = findViewById(R.id.addIntro)
+        et_body = findViewById(R.id.addBody)
+        et_outro = findViewById(R.id.addOutro)
+        diaryHandler = DiaryHandler()
 
-        save = findViewById(R.id.save)
+        save = findViewById(R.id.addSave)
         save.setOnClickListener{
 
-            val date = date.text.toString()
-            val intro = intro.text.toString()
-            val body = body.text.toString()
-            val outro = outro.text.toString()
+            val date = et_date.text.toString()
+            val intro = et_intro.text.toString()
+            val body = et_body.text.toString()
+            val outro = et_outro.text.toString()
 
             val diary = Diary(date = date, intro = intro, body = body, outro = outro)
 
-            if(date.isNotEmpty() && intro.isNotEmpty() && body.isNotEmpty() && outro.isNotEmpty()) {
+            if(et_date.text.toString().isNotEmpty() && et_intro.text.toString().isNotEmpty() && et_body.text.toString().isNotEmpty() && et_outro.text.toString().isNotEmpty()) {
                 diaryHandler.create(diary)
                 Toast.makeText(this, "Entry Added to Diary", Toast.LENGTH_SHORT).show()
                 clearFields()
             }
-            else if(date.isEmpty() || intro.isEmpty() || body.isEmpty() || outro.isEmpty()){
+            else{
                 Toast.makeText(this, "Fill Up All Fields", Toast.LENGTH_SHORT).show()
             }
         }
@@ -50,10 +52,10 @@ class DiaryAddActivity : AppCompatActivity() {
     }
 
     fun clearFields() {
-        date.text.clear()
-        intro.text.clear()
-        body.text.clear()
-        outro.text.clear()
+        et_date.text.clear()
+        et_intro.text.clear()
+        et_body.text.clear()
+        et_outro.text.clear()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

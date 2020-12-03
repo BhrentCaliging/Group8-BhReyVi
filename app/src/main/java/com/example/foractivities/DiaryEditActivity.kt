@@ -23,7 +23,7 @@ class DiaryEditActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_show_diary)
+        setContentView(R.layout.activity_diary_edit)
 
         diaryHandler = DiaryHandler()
         var diaryItems: Diary = intent.getSerializableExtra("data") as Diary
@@ -38,7 +38,7 @@ class DiaryEditActivity: AppCompatActivity() {
         body.setText(diaryItems.body)
         outro.setText(diaryItems.outro)
 
-        save = findViewById(R.id.save)
+        save = findViewById(R.id.editSave)
         save.setOnClickListener{
 
             val date = date.text.toString()

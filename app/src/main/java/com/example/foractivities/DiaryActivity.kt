@@ -12,6 +12,9 @@ import com.example.foractivities.handlers.DiaryHandler
 import com.example.foractivities.handlers.ScriptHandler
 import com.example.foractivities.models.Diary
 import com.example.foractivities.models.Script
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 
 class DiaryActivity : AppCompatActivity() {
 
@@ -24,7 +27,7 @@ class DiaryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_diary)
 
-        list = findViewById(R.id.listView)
+        list = findViewById(R.id.listView_diary)
         diaries = ArrayList()
         diaryHandler = DiaryHandler()
 
@@ -40,14 +43,14 @@ class DiaryActivity : AppCompatActivity() {
     override fun onContextItemSelected(item: MenuItem): Boolean {
         val info = item.menuInfo as AdapterView.AdapterContextMenuInfo
         return when(item.itemId) {
-            R.id.go_to_edit_script -> {
+            R.id.update_diary -> {
                 diary = diaries[info.position]
                 var intent = Intent(this,DiaryEditActivity::class.java)
                 intent.putExtra("data", diary)
                 startActivity(intent)
                 true
             }
-            R.id.go_to_delete_script -> {
+            R.id.delete_diary -> {
                 if(diaryHandler.delete(diaries[info.position])){
                     Toast.makeText(applicationContext, "Diary entry deleted successfully", Toast.LENGTH_SHORT).show()
                 }
@@ -65,11 +68,11 @@ class DiaryActivity : AppCompatActivity() {
             override fun onDataChange(p0: DataSnapshot) {
                 diaries.clear()
                 p0.children.forEach{
-                        it -> val channel = it.getValue(Script::class.java)
-                    diaries.add(channel!!)
+                        it -> val diary = it.getValue(Diary::class.java)
+                    diaries.add(diary!!)
                 }
 
-                val adapter = ArrayAdapter<Script>(applicationContext, android.R.layout.simple_list_item_1, diaries)
+                val adapter = ArrayAdapter<Diary>(applicationContext, android.R.layout.simple_list_item_1, diaries)
                 list.adapter = adapter
             }
             override fun onCancelled(p0: DatabaseError) {

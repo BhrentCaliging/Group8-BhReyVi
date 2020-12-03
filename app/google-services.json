@@ -1,42 +1,34 @@
 {
   "project_info": {
-    "project_number": "424796438245",
-    "firebase_url": "https://user-registration-app-f3fa2.firebaseio.com",
-    "project_id": "user-registration-app-f3fa2",
-    "storage_bucket": "user-registration-app-f3fa2.appspot.com"
+    "project_number": "862739512357",
+    "firebase_url": "https://cc17-pahina-app.firebaseio.com",
+    "project_id": "cc17-pahina-app",
+    "storage_bucket": "cc17-pahina-app.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:424796438245:android:233cecebc26a6eb92a5e0c",
+        "mobilesdk_app_id": "1:862739512357:android:871b296963e7939cc9d3cc",
         "android_client_info": {
-          "package_name": "org.techgeorge.loginscreen"
+          "package_name": "com.example.foractivities"
         }
       },
       "oauth_client": [
         {
-          "client_id": "424796438245-kkgava5ilbpgd24uthithf5cst40gkto.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "org.techgeorge.loginscreen",
-            "certificate_hash": "56104c33912d59a6f7e347b0d31abe0c485b1b11"
-          }
-        },
-        {
-          "client_id": "424796438245-ce08skejjvlnobgu3fbno8sla178nrfk.apps.googleusercontent.com",
+          "client_id": "862739512357-mnkk2gtfh69t1iccjj3k6l46au0uvl1b.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA5dnSUXRomdMCswFJhn01SgL4DLVOsX2k"
+          "current_key": "AIzaSyCmwIecwxwYRgQ8w6FOZZwE5Patbv3giho"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "424796438245-ce08skejjvlnobgu3fbno8sla178nrfk.apps.googleusercontent.com",
+              "client_id": "862739512357-mnkk2gtfh69t1iccjj3k6l46au0uvl1b.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

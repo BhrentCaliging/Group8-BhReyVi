@@ -32,6 +32,12 @@ class DiaryActivity : AppCompatActivity() {
         diaryHandler = DiaryHandler()
 
         registerForContextMenu(list)
+        list.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+            diary = diaries[position]
+            var intent = Intent(this,DiaryItemActivity::class.java)
+            intent.putExtra("data", diary)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {

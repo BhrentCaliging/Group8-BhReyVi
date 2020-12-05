@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".DiaryItemActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/date_diary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12/12/2020"
+            android:textSize="20dp"
+            android:layout_marginStart="270dp"
+            android:layout_marginTop="20dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_intro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Intro: "
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/date_diary">
+        </TextView>
+
+        <TextView
+            android:id="@+id/intro_diary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="content"
+            android:textSize="20dp"
+            android:layout_below="@+id/tv_intro"></TextView>
+
+        <TextView
+            android:id="@+id/tv_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Body: "
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/intro_diary">
+        </TextView>
+
+        <TextView
+            android:id="@+id/body_diary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="content"
+            android:textSize="20dp"
+            android:layout_below="@+id/tv_body"></TextView>
+
+        <TextView
+            android:id="@+id/tv_signOff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign off: "
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/body_diary">
+        </TextView>
+
+        <TextView
+            android:id="@+id/signOff_diary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="content"
+            android:textSize="20dp"
+            android:layout_below="@+id/tv_signOff"></TextView>
+
+    </RelativeLayout>
+
+</ScrollView>

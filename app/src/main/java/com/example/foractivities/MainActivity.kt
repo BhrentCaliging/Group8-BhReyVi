@@ -46,8 +46,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.profile ->{
-                startActivity(Intent(this, ProfileActivity::class.java))
+            R.id.recents ->{
                 true
             }
             else -> super.onOptionsItemSelected(item)

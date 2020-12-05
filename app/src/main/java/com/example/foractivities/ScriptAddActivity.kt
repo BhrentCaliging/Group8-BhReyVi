@@ -78,10 +78,6 @@ class ScriptAddActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.profile ->{
-                startActivity(Intent(this, ProfileActivity::class.java))
-                true
-            }
             R.id.recents ->{
                 startActivity(Intent(this, MainActivity::class.java))
                 true

@@ -32,6 +32,12 @@ class ScriptActivity : AppCompatActivity() {
         scriptHandler = ScriptHandler()
 
         registerForContextMenu(scriptListView)
+        scriptListView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+            script = scripts[position]
+            var intent = Intent(this,ScriptItemActivity::class.java)
+            intent.putExtra("data", script)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {

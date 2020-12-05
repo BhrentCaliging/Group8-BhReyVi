@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookItemActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title: "
+            android:textSize="20dp"
+            android:layout_marginTop="20dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/title_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="content"
+            android:textSize="20dp"
+            android:layout_below="@+id/tv_title"></TextView>
+
+        <TextView
+            android:id="@+id/tv_chapter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chapters: "
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/title_book">
+        </TextView>
+
+        <TextView
+            android:id="@+id/chapter_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="content"
+            android:textSize="20dp"
+            android:layout_below="@+id/tv_chapter"></TextView>
+
+        <TextView
+            android:id="@+id/tv_synopsis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Synopsis: "
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/chapter_book">
+        </TextView>
+
+        <TextView
+            android:id="@+id/synopsis_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="content"
+            android:textSize="20dp"
+            android:layout_below="@+id/tv_synopsis"></TextView>
+
+    </RelativeLayout>
+</ScrollView>

@@ -32,6 +32,12 @@ class BookActivity : AppCompatActivity() {
         bookHandler = BookHandler()
 
         registerForContextMenu(list)
+        list.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+            book = books[position]
+            var intent = Intent(this,BookItemActivity::class.java)
+            intent.putExtra("data", book)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {

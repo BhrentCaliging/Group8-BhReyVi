@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ScriptItemActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_fade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fade: "
+            android:textSize="20dp"
+            android:layout_marginTop="20dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/fade_script"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="content"
+            android:textSize="20dp"
+            android:layout_below="@+id/tv_fade"></TextView>
+
+        <TextView
+            android:id="@+id/tv_scene"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scene Heading: "
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/fade_script">
+        </TextView>
+
+        <TextView
+            android:id="@+id/scene_script"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="content"
+            android:textSize="20dp"
+            android:layout_below="@+id/tv_scene"></TextView>
+
+        <TextView
+            android:id="@+id/tv_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Action: "
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/scene_script">
+        </TextView>
+
+        <TextView
+            android:id="@+id/action_script"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="content"
+            android:textSize="20dp"
+            android:layout_below="@+id/tv_action"></TextView>
+
+        <TextView
+            android:id="@+id/tv_character"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Character: "
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/action_script">
+        </TextView>
+
+        <TextView
+            android:id="@+id/character_script"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="content"
+            android:textSize="20dp"
+            android:layout_below="@+id/tv_character"></TextView>
+
+        <TextView
+            android:id="@+id/tv_paren"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Parenthetical: "
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/character_script">
+        </TextView>
+
+        <TextView
+            android:id="@+id/parenthetical_script"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="content"
+            android:textSize="20dp"
+            android:layout_below="@+id/tv_paren"></TextView>
+
+        <TextView
+            android:id="@+id/tv_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Line: "
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/parenthetical_script">
+        </TextView>
+
+        <TextView
+            android:id="@+id/line_script"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="content"
+            android:textSize="20dp"
+            android:layout_below="@+id/tv_line"></TextView>
+
+        <TextView
+            android:id="@+id/tv_transition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transition: "
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/line_script">
+        </TextView>
+
+        <TextView
+            android:id="@+id/transition_script"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="content"
+            android:textSize="20dp"
+            android:layout_below="@+id/tv_transition"></TextView>
+
+    </RelativeLayout>
+
+</ScrollView>

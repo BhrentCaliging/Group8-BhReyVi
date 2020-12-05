@@ -61,6 +61,7 @@ class ScriptEditActivity : AppCompatActivity() {
                 && et_parenthetical.text.toString().isNotEmpty() && et_line.text.toString().isNotEmpty() && et_transition.text.toString().isNotEmpty()){
                 scriptHandler.update(script)
                 Toast.makeText(applicationContext, "Script edited successfully", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, ScriptActivity::class.java))
             }
             else {
                 Toast.makeText(applicationContext, "Please enter the credentials", Toast.LENGTH_SHORT).show()

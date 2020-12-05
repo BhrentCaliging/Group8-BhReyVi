@@ -35,6 +35,7 @@ class RegisterActivity : AppCompatActivity() {
             if(et_username.text.toString().isNotEmpty() && et_password.text.toString().isNotEmpty()) {
                 handler.insertUserData(et_username.text.toString(), et_password.text.toString())
                 Toast.makeText(this, "Sign up Success", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, LoginActivity::class.java))
             }
             else if(et_username.text.toString().isNullOrEmpty() && et_password.text.toString().isNullOrEmpty()){
                 Toast.makeText(this, "Please fill up credentials", Toast.LENGTH_SHORT).show()

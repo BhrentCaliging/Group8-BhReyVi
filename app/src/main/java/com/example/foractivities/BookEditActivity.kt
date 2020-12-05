@@ -45,6 +45,7 @@ class BookEditActivity : AppCompatActivity() {
             if(title.isNotEmpty() && chapter.isNotEmpty() && synopsis.isNotEmpty()){
                 bookHandler.update(book)
                 Toast.makeText(this, "Book entry edited successfully", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, BookActivity::class.java))
             }
             else
                 Toast.makeText(this, "Fill Up All Fields", Toast.LENGTH_SHORT).show()

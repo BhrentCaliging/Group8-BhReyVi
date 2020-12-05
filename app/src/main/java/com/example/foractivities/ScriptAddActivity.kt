@@ -53,6 +53,7 @@ class ScriptAddActivity : AppCompatActivity() {
                 && et_parenthetical.text.toString().isNotEmpty() && et_line.text.toString().isNotEmpty() && et_transition.text.toString().isNotEmpty()){
                 scriptHandler.create(script)
                 Toast.makeText(applicationContext, "Script added successfully", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, ScriptActivity::class.java))
                 clearFields()
             }
             else {

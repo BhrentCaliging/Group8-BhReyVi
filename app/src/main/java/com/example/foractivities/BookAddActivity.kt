@@ -39,6 +39,7 @@ class BookAddActivity : AppCompatActivity() {
             if(title.isNotEmpty() && chapter.isNotEmpty() && synopsis.isNotEmpty()){
                 bookHandler.create(book)
                 Toast.makeText(this, "Entry Added to Book", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, BookActivity::class.java))
                 clearFields()
             }
             else

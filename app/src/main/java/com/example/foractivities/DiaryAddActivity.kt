@@ -42,6 +42,7 @@ class DiaryAddActivity : AppCompatActivity() {
             if(et_date.text.toString().isNotEmpty() && et_intro.text.toString().isNotEmpty() && et_body.text.toString().isNotEmpty() && et_outro.text.toString().isNotEmpty()) {
                 diaryHandler.create(diary)
                 Toast.makeText(this, "Entry Added to Diary", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, DiaryActivity::class.java))
                 clearFields()
             }
             else{

@@ -12,7 +12,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 */
 
-class ProfileActivity : AppCompatActivity() {
+class  ProfileActivity : AppCompatActivity() {
     /*
     private var occupationTxtView: TextView? = null
     private var nameTxtView: TextView? = null
